@@ -15,4 +15,6 @@ public class Sym {
     // Construtor privado para evitar instanciação da classe
     private Sym() {
     }
+    
+    
 }

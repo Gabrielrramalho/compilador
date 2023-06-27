@@ -41,7 +41,7 @@
         </execution>
       </executions>
       <configuration>
-        <jflexFile>src\main\java\com\mycompany\projeto_compilador\lexica.Jflex</jflexFile>
+        <jflexFile>src/main/java/com/mycompany/projeto_compilador/lexica.Jflex</jflexFile>
         <outputDirectory>src/main/java</outputDirectory>
       </configuration>
     </plugin>
