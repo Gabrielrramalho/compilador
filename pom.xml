@@ -30,22 +30,29 @@
 
   <build>
     <plugins>
-      <plugin>
-        <groupId>de.jflex</groupId>
-        <artifactId>jflex-maven-plugin</artifactId>
-        <version>1.8.2</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <jflexFile>src/main/jflex/MeuAnalizadorLexico.jflex</jflexFile>
-          <outputDirectory>src/main/java</outputDirectory>
-        </configuration>
-      </plugin>
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>3.0.0</version>
+            <executions>
+                <execution>
+                    <id>generate-sym</id>
+                    <phase>generate-sources</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>java</executable>
+                        <arguments>
+                            <argument>-jar</argument>
+                            <argument>/caminho-para/java-cup-<versão>.jar</argument>
+                            <argument>/caminho-para/arquivo.cup</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
     </plugins>
-  </build>
+</build>
+
 </project>
