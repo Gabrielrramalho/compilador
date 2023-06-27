@@ -12,47 +12,40 @@
   </properties>
 
   <dependencies>
-    <!-- Adicione as dependências do seu projeto aqui -->
-    <!-- https://mvnrepository.com/artifact/de.jflex/jflex -->
+    <!-- Dependência do JFlex -->
     <dependency>
       <groupId>de.jflex</groupId>
       <artifactId>jflex</artifactId>
       <version>1.9.1</version>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/com.github.vbmacher/java-cup -->
+    <!-- Dependência do Java Cup -->
     <dependency>
       <groupId>com.github.vbmacher</groupId>
       <artifactId>java-cup</artifactId>
-      <version>11b</version>
+      <version>11b-20160615</version>
     </dependency>
   </dependencies>
-
+  
   <build>
-    <plugins>
-        <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>exec-maven-plugin</artifactId>
-            <version>3.0.0</version>
-            <executions>
-                <execution>
-                    <id>generate-sym</id>
-                    <phase>generate-sources</phase>
-                    <goals>
-                        <goal>exec</goal>
-                    </goals>
-                    <configuration>
-                        <executable>java</executable>
-                        <arguments>
-                            <argument>-jar</argument>
-                            <argument>/caminho-para/java-cup-<versão>.jar</argument>
-                            <argument>/caminho-para/arquivo.cup</argument>
-                        </arguments>
-                    </configuration>
-                </execution>
-            </executions>
-        </plugin>
-    </plugins>
+  <plugins>
+    <plugin>
+      <groupId>de.jflex</groupId>
+      <artifactId>jflex-maven-plugin</artifactId>
+      <version>1.8.2</version>
+      <executions>
+        <execution>
+          <goals>
+            <goal>generate</goal>
+          </goals>
+        </execution>
+      </executions>
+      <configuration>
+        <jflexFile>src\main\java\com\mycompany\projeto_compilador\lexica.Jflex</jflexFile>
+        <outputDirectory>src/main/java</outputDirectory>
+      </configuration>
+    </plugin>
+  </plugins>
 </build>
 
 </project>

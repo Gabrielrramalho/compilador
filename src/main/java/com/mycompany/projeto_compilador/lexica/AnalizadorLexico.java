@@ -12,11 +12,12 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java_cup.runtime.Symbol;
+import java_cup.sym;
 
 public class AnalizadorLexico {
 
     public static void main(String[] args) {
-        String codigoFonte = lerCodigoFonteDeArquivo("caminho/do/arquivo.txt"); // Substitua pelo caminho do seu arquivo
+        String codigoFonte = lerCodigoFonteDeArquivo("C:/Users/User/Desktop/projeto/Projeto_compilador/src/main/java/com/mycompany/projeto_compilador/lexica/lexico.jflex"); 
 
         MeuAnalizadorLexico lexer = new MeuAnalizadorLexico(codigoFonte); // Crie uma instância do analisador léxico
 
